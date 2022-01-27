@@ -54,7 +54,7 @@ cv2.setMouseCallback(texte_image, clique)
 
 while True:
     cv2.imshow(texte_image, image)
-    k = cv2.waitKey(1)
-    if k == 27:
+    echap = cv2.waitKey(1)
+    if echap == 27:
         cv2.destroyAllWindows()
         break
