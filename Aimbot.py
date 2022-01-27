@@ -12,7 +12,7 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 faces = visage.detectMultiScale(            #Augmenter les valeurs en cas de tête trop grosse
     gray,
-    scaleFactor=1.3,                        #Essayer 1.2 voir 1.3 si bug
+    scaleFactor=1.1,                        #Essayer 1.2 voir 1.3 si bug
     minNeighbors=5,
     minSize=(30, 30))
 
