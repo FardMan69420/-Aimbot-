@@ -1,0 +1,74 @@
+/*page css pour page 3*/
+body {
+	background-color: #000000;
+	}
+
+.lien_page_secondaire {
+	margin-top: 1100px;
+	margin-left: 80px;
+}
+.lien_page_4 {
+	margin-left: 80px;
+}
+a:link {
+	color: green;
+}
+a:active {
+	color: green;
+}
+a:visited {
+	color: green;
+}
+a:hover {
+	color: 2EE616;
+}
+.carre1 {
+	background: #282827FF;
+	width: 1180px;
+	height: 1200px;
+	position: absolute;
+	left: 40px; top: 70px; right: 40px;
+}
+
+.Lire_Suite {
+	margin-left: 495px;
+	margin-bottom: 100px;
+}
+
+.text1_suite {
+	margin-top: -100px
+}
+
+.text1 {
+	color: #C0C0C0;
+	position: absolute;
+	top: 10px; left: 40px;
+	}
+	
+.titre1 {
+	margin-left: 495px;
+	font-size: 20px;
+	color: red;
+}
+
+.fin_de_page {
+	position: absolute;
+	top: 1220px;
+}
+
+.tuto1 {
+position: absolute;
+top: 120px; left: 420px;
+}
+
+.tuto2 {
+position: absolute;
+top: 280px; left: 500px;
+}
+
+
+.tuto3 {
+position: absolute;
+top: 580px; left: 500px;
+}
+
