@@ -2,7 +2,7 @@
 
 Program find a head from a random picture and mark it on Python
 
-Install the OpenCv and PyAutoGui Packages
+Install the Opencv-python and PyAutoGui Packages
 
 How does it work ?
 Just Left Click once(don't click 2 times or it will bug)
