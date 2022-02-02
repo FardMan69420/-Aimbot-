@@ -12,7 +12,7 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)      #Pour transformer les couleu
 
 faces = visage.detectMultiScale(            #Augmenter les valeurs en cas de tête trop grosse
     gray,
-    scaleFactor=1.1,                        #Essayer 1.2 voir 1.3 si bug
+    scaleFactor=1.1,                        #Impossible >1.1 et Essayer 1.2 voir 1.3 si bug
     minNeighbors=5,
     minSize=(30, 30))
 
@@ -32,9 +32,9 @@ def coordonnees():
     (x2, y2) = pyautogui.position()
     x3 = x2 - w2
     y3 = (y2 + 8) - h2
+    pyautogui.moveTo(x2 - w2, y2 - h2)
     for i in range(len(faces)):         #mettre un carré puis montrer l'image a nouveau qui aura été actualisée
         (x1, y1, w1, h1) = faces[nombre]
-        pyautogui.moveTo(x2 - w2, y2 - h2)
         pyautogui.moveTo(x3 + x1 +w1/2, y3 + y1+h1/2, duration=0.2)
         cv2.rectangle(image, (x1, y1), (x1 + w1, y1 + h1), (255, 255, 0), 2)
         cv2.imshow(texte_image, image)
