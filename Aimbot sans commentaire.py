@@ -32,7 +32,6 @@ def coordonnees():
     (x2, y2) = pyautogui.position()
     x3 = x2 - w2
     y3 = (y2 + 8) - h2
-    pyautogui.moveTo(x2 - w2, y2 - h2)
     for i in range(len(faces)):
         (x1, y1, w1, h1) = faces[nombre]
         pyautogui.moveTo(x3 + x1 +w1/2, y3 + y1+h1/2, duration=0.2)
