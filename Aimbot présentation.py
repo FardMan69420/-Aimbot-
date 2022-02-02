@@ -19,20 +19,20 @@ faces = visage.detectMultiScale(            #Augmenter les valeurs en cas de tê
 print("{0} Tête trouvée".format(len(faces)))
 
 
-def milieu():
+def milieu():           #Fonction servant a détecter une image sur l'écran puis trouver le milieu de l'image et aller dessus
     centre = pyautogui.locateCenterOnScreen(texte_image, region=(0, 0, 1920, 1080), grayscale=True, confidence=0.70)
     pyautogui.moveTo(centre)
 
 
-def coordonnees():
+def coordonnees():      
     nombre = len(faces) - 1
-    h2, w2, _ = image.shape
-    h2 = h2 / 2
-    w2 = w2 / 2
+    h2, w2, _ = image.shape  #dimension de l'image
+    h2 = h2 / 2                     #aller en haut a gauche de l'image donc la position h2-w2 w2-w2 = la position 0, 0 de l'image
+    w2 = w2 / 2                     #car ce n'est pas la position sur l'écran de résolution 1920 1080
     (x2, y2) = pyautogui.position()
     x3 = x2 - w2
     y3 = (y2 + 8) - h2
-    for i in range(len(faces)):
+    for i in range(len(faces)):         #mettre un carré puis montrer l'image a nouveau qui aura été actualisée
         (x1, y1, w1, h1) = faces[nombre]
         pyautogui.moveTo(x2 - w2, y2 - h2)
         pyautogui.moveTo(x3 + x1 +w1/2, y3 + y1+h1/2, duration=0.2)
@@ -43,16 +43,16 @@ def coordonnees():
         nombre = nombre - 1
 
 
-def clique(event, x, y, flag, param):
-    if event == cv2.EVENT_LBUTTONDOWN:
+def clique(event, x, y, flag, param):       #Si clique gauche faire :
+    if event == cv2.EVENT_LBUTTONDOWN:      #remplacer par cv2.EVENT_RBUTTONDOWN: pour clique droit
         milieu()
         coordonnees()
 
 
-cv2.namedWindow(texte_image)
-cv2.setMouseCallback(texte_image, clique)
+cv2.namedWindow(texte_image)            #renommer la fenetre dans laquelle l'image s'ouvre
+cv2.setMouseCallback(texte_image, clique)       #détecter les mouvements de souris
 
-while True:
+while True:                 # Pouvoir fermer l'image en appuyant sur Echap
     cv2.imshow(texte_image, image)
     echap = cv2.waitKey(1)
     if echap == 27:
