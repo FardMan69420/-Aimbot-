@@ -10,9 +10,9 @@ visage = cv2.CascadeClassifier(fichierdetection)
 image = cv2.imread(texte_image)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-faces = visage.detectMultiScale(            #Augmenter les valeurs en cas de tête trop grosse
+faces = visage.detectMultiScale(          
     gray,
-    scaleFactor=1.1,                        #Essayer 1.2 voir 1.3 si bug
+    scaleFactor=1.1,                        
     minNeighbors=5,
     minSize=(30, 30))
 
